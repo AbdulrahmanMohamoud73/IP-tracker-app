@@ -17,6 +17,14 @@ function App() {
         <button><img src={arrow} className='bg-black h-12 p-4 rounded-r-md'/></button>
       </div>
     </form>
+    <div className="flex justify-center align-center">
+      <div className='w-3/4 h-44 shadow-lg flex items-center p-2 border-black border-2 rounded-3xl bg-white relative -bottom-14'>
+        <div className="h-32 w-80 border-r-black border-r-2"></div>
+        <div className="h-32 w-80 border-r-black border-r-2"></div>
+        <div className="h-32 w-80 border-r-black border-r-2"></div>
+        <div className="h-30 w-80"></div>
+      </div>
+    </div>
     </>
   )
   }
