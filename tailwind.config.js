@@ -9,7 +9,11 @@ export default {
       'lg':'375px',
 
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        rubik:"'rubik', 'sans-serif'"
+      }
+    },
   },
   plugins: [],
 }
