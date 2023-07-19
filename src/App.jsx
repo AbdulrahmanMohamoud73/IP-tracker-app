@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { useState } from 'react';
 import axios from 'axios'
 
+
 function App() {
 
   const [inputVal, setInputVal] = useState('');
@@ -19,7 +20,7 @@ function App() {
   
   const getlocation = async() => {
 
-      const response = await axios.get(`http://localhost:8000/?ipAddress=${inputVal}`)
+      const response = await axios.get(`https://technotes-api.onrender.com/?ipAddress=${inputVal}`)
       .catch(error => console.log(error))
 
     setResponseData(response.data)
