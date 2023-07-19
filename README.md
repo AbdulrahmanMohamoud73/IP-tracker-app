@@ -7,6 +7,7 @@ This an IP Address Tracker app that I built using the design above using an [IP 
 # Decisions and Process
 
 Design: Provided by [Frontend Mentor](https://www.frontendmentor.io/home)
+
 Tech choices:
 - Framework: React 
 - CSS: Used TailwindCSS
