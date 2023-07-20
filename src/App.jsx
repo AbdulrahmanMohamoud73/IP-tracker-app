@@ -59,11 +59,15 @@ function App() {
       </div>
     </article>
     <MapContainer className="h-2/3 w-full z-0" attributionControl={false} center={responsedata?.location ? [responsedata?.location?.lat, responsedata?.location?.lng] : [51.505, -0.09]} zoom={9} scrollWheelZoom={true}>
+        
         {responsedata?.location && <ChangeView zoom={9} center={[responsedata?.location?.lat, responsedata?.location?.lng]} />}
+        
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
+        
         {responsedata?.location?.lat && responsedata?.location?.lng ? (<Marker position={[responsedata.location.lat, responsedata.location.lng]}></Marker> ) : ( <Marker position={[51.505, -0.09]}></Marker>
-)}
+        
+        )}
+        
       </MapContainer>
     </>
   )
