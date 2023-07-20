@@ -1,5 +1,5 @@
 const PORT = 8000
-import express from 'express'
+import { express } from 'express'
 import cors from 'cors'
 import axios from 'axios'
 import 'dotenv/config'
