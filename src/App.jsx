@@ -9,18 +9,23 @@ import axios from 'axios'
 
 function App() {
 
+  // State Variable to store inputed values in search bar
   const [inputVal, setInputVal] = useState('');
+  // State Variable to store API response
   const [responsedata, setResponseData] = useState(null);
 
+  // sets the new view using the coordinates from the API response
   function ChangeView({ center, zoom }) {
     const map = useMap();
     map.setView(center, zoom);
     return null;
   }
   
+  //
+
   const getlocation = async() => {
 
-      const response = await axios.get(`https://iptrackerapp.onrender.com/?ipAddress=${inputVal}`)
+      const response = await axios.get(`https://iptrackerapp-1s20.onrender.com/?ipAddress=${inputVal}`)
       .catch(error => console.log(error))
 
     setResponseData(response.data)
@@ -60,10 +65,12 @@ function App() {
     </article>
     <MapContainer className="h-2/3 w-full z-0" attributionControl={false} center={responsedata?.location ? [responsedata?.location?.lat, responsedata?.location?.lng] : [51.505, -0.09]} zoom={9} scrollWheelZoom={true}>
         
+        {/* Show ChangeView component if reponsedata exists*/}
         {responsedata?.location && <ChangeView zoom={9} center={[responsedata?.location?.lat, responsedata?.location?.lng]} />}
         
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         
+        {/* Show marker at coordinates from  API response otherwise use the default position */}
         {responsedata?.location?.lat && responsedata?.location?.lng ? (<Marker position={[responsedata.location.lat, responsedata.location.lng]}></Marker> ) : ( <Marker position={[51.505, -0.09]}></Marker>
         
         )}
