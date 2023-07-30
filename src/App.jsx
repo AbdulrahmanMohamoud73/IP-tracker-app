@@ -25,7 +25,7 @@ function App() {
 
   const getlocation = async() => {
 
-      const response = await axios.get(`https://iptrackerapp-1s20.onrender.com/?ipAddress=${inputVal}`)
+      const response = await axios.get(`http://iptrackerapp-1s20.onrender.com/?ipAddress=${inputVal}`)
       .catch(error => console.log(error))
 
     setResponseData(response.data)
